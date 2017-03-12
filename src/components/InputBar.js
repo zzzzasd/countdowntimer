@@ -4,15 +4,15 @@ class InputBar extends React.Component {
   constructor (props) {
     super(props)
     this.state = {value:''}
-
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event){
-      this.setState({value: event.target.value})
-       this.props.onValueChange(event.target.value);
+    this.setState({value: event.target.value})
+    this.props.onValueChange(event.target.value);
+
   }
 
   handleSubmit(event) {
@@ -26,13 +26,12 @@ class InputBar extends React.Component {
 
   render() {
     return (
-      <form onSubmit ={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
         Date:
         <input type="Date" value={this.props.value} onChange={this.handleChange}/>
         </label>
         <button onClick={this.handleClick}> </button>
-
       </form>
     );
   }
