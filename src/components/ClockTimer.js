@@ -6,6 +6,7 @@ class ClockTimer extends React.Component {
     super(props)
     this.state={count: 0}
     this.tick = this.tick.bind(this)
+    this.state={value : this.props.value}
   }
 
 componentDidMount (){
@@ -13,18 +14,18 @@ componentDidMount (){
 }
 
 tick () {
-   this.setState({count: this.state.value - this.props.start})
-   if (this.state.count <=0) {
-     clearInterval(this.interval)
-   }
+  var givenDay = this.props.value/1000/60/60/24
+  var startDay = this.props.start
+
+   this.setState({count: givenDay - startDay })
+
  }
 
   render(){
-    const seconds = (this.state.count)
     return(
 
       <div>
-        <h1> {seconds} </h1>
+        <h1> {this.state.count} </h1>
 
       </div>
     )

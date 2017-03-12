@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <InputBar onValueChange={this.parentHandleChange} />
-        //<ClockTimer start={Date.now()} />
+        <ClockTimer start={Date.now()} />
       </div>
 
     );
